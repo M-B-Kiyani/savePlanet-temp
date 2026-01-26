@@ -1,0 +1,83 @@
+.benefits {
+  padding: 100px 0;
+  background: white;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.benefits-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefits-title .highlight {
+  color: var(--accent-orange);
+}
+
+.benefits-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.benefit-card {
+  padding: 40px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-green);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--primary-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.benefit-card-title {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--primary-green);
+}
+
+.benefit-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-title {
+    font-size: 2rem;
+  }
+}

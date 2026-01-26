@@ -1,0 +1,199 @@
+.project-card {
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-colors-300, #d1d5db);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  width: 100%;
+}
+
+.project-card:hover {
+  border: 1px solid var(--C1, #015404);
+  box-shadow: 0 0 5px var(--C1, #015404);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  padding: 0 13.5px;
+  padding-top: 90%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .project-image-wrapper {
+    padding-top: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 14px;
+  }
+
+  .project-image-wrapper {
+    padding-top: 80%;
+    margin-bottom: 12px;
+  }
+
+  .project-info {
+    padding: 10px 0 0 0;
+  }
+
+  .project-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .project-id {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 12px;
+  }
+
+  .project-image-wrapper {
+    padding-top: 75%;
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .project-id {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .currency-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+}
+
+.project-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 1%;
+  top: 1%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: all ease 1s;
+}
+
+.project-image:hover {
+  scale: 1.05;
+}
+
+.project-card:hover .project-image {
+  transition: transform 0.4s ease;
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 12px 0 0 0;
+}
+
+.project-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #181818;
+  line-height: 1.3;
+}
+
+.project-id {
+  font-size: 14px;
+  color: #181818;
+  margin-bottom: 16px;
+  font-family: "Courier New", monospace;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.currency-icon {
+  background: #015404;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.price-amount {
+  font-size: 16px;
+  font-weight: 600;
+  color: #383751;
+}
+
+.currency {
+  font-size: 14px;
+  font-weight: 600;
+  color: #383751;
+}
+
+.sdg-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.sdg-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: 1200px) {
+  .project-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-image-wrapper {
+    padding-top: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+    width: 100%;
+  }
+
+  .project-image-wrapper {
+    height: 180px;
+  }
+
+  .project-info {
+    padding: 14px;
+  }
+}

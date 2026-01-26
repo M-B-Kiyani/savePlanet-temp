@@ -1,0 +1,79 @@
+.educational {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+
+.educational-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.educational-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.educational-title .highlight {
+  color: var(--accent-orange);
+}
+
+.educational-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.educational-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.reason-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+}
+
+.reason-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(1, 84, 4, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reason-title {
+  font-size: 1.25rem;
+  color: var(--primary-green);
+  margin: 0;
+}
+
+.reason-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .educational-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .educational-grid {
+    grid-template-columns: 1fr;
+  }
+}

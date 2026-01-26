@@ -1,0 +1,542 @@
+.about {
+  background: white;
+}
+
+/* NFT Investment Section */
+.invest-nft-section {
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.nft-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .invest-nft-section {
+    padding: 50px 18px;
+  }
+
+  .nft-content {
+    gap: 25px;
+  }
+
+  .nft-text h2 {
+    font-size: 42px !important;
+    margin-bottom: 28px;
+  }
+
+  .highlight-orange,
+  .highlight-green {
+    font-size: 42px;
+  }
+
+  .nft-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nft-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .nft-text h2 {
+    font-size: 38px !important;
+  }
+
+  .highlight-orange,
+  .highlight-green {
+    font-size: 38px;
+  }
+
+  .nft-benefits {
+    justify-content: flex-start;
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .invest-nft-section {
+    padding: 40px 15px;
+  }
+
+  .nft-text h2 {
+    font-size: 32px !important;
+    margin-bottom: 24px;
+  }
+
+  .highlight-orange,
+  .highlight-green {
+    font-size: 32px;
+  }
+
+  .nft-benefits {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nft-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invest-nft-section {
+    padding: 30px 12px;
+  }
+
+  .nft-text h2 {
+    font-size: 28px !important;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .highlight-orange,
+  .highlight-green {
+    font-size: 28px;
+  }
+
+  .nft-description {
+    font-size: 14px;
+  }
+
+  .benefits-column li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  /* Climate section adjustments for 480px */
+  .invest-climate-section {
+    padding: 50px 15px;
+    margin-top: 30px;
+  }
+
+  .climate-header {
+    margin-bottom: 40px;
+  }
+
+  .climate-header h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .climate-subtitle {
+    font-size: 15px;
+  }
+
+  .climate-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .climate-steps {
+    gap: 25px;
+    padding: 15px 0;
+  }
+
+  .step-item {
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+
+  .step-content h3 {
+    font-size: 18px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 360px) {
+  .invest-nft-section {
+    padding: 25px 10px;
+  }
+
+  .nft-text h2 {
+    font-size: 24px !important;
+    margin-bottom: 16px;
+  }
+
+  .highlight-orange,
+  .highlight-green {
+    font-size: 24px;
+  }
+
+  .nft-description {
+    font-size: 13px;
+  }
+
+  /* Climate section adjustments for 360px */
+  .invest-climate-section {
+    padding: 40px 12px;
+    margin-top: 25px;
+  }
+
+  .climate-header {
+    margin-bottom: 30px;
+  }
+
+  .climate-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .climate-subtitle {
+    font-size: 14px;
+  }
+
+  .climate-steps {
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  .step-item {
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+.nft-text h2 {
+  font-size: 48px !important;
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.highlight-orange {
+  font-size: 48px;
+  color: #ff9800;
+}
+
+.highlight-green {
+  font-size: 48px;
+  color: #015404;
+}
+
+.nft-benefits {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.benefits-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-column li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.benefits-column li::before {
+  content: "•";
+  position: absolute;
+  left: 0px;
+  top: 0;
+  color: #015404;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Keep existing styling for 480px and smaller screens */
+@media (max-width: 480px) {
+  .benefits-column li::before {
+    left: 70px;
+  }
+}
+
+.nft-description {
+  font-family: Nunito, Inter, sans-serif !important;
+  font-size: 18px;
+  color: #383751;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.nft-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.nft-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Invest in Climate Action Projects Section */
+.invest-climate-section {
+  padding: 80px 20px;
+  background: #fff;
+  margin-top: 40px;
+}
+
+.climate-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.climate-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.climate-header h2 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.climate-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+.climate-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.climate-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.climate-image img {
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+}
+
+.climate-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 0;
+}
+
+.steps-container {
+  position: relative;
+  padding-left: 60px;
+}
+
+.connecting-line {
+  position: absolute;
+  left: 29px; /* Center on the dots */
+  /* top: 30px; Start from first dot center */
+  width: 3px;
+  height: calc(100% - 35px); /* Full height minus first and last dot offset */
+  background: #e0e0e0; /* Gray background line */
+  border-radius: 1px;
+}
+
+/* Responsive connecting line adjustments */
+@media (max-width: 1024px) {
+  .connecting-line {
+    height: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 992px) {
+  .connecting-line {
+    height: calc(100% - 65px);
+  }
+}
+
+@media (max-width: 768px) {
+  .connecting-line {
+    height: calc(100% - 65px);
+  }
+}
+
+@media (max-width: 480px) {
+  .connecting-line {
+    display: none; /* Hide line on small mobile screens */
+  }
+}
+
+@media (max-width: 360px) {
+  .connecting-line {
+    display: none; /* Hide line on very small screens */
+  }
+}
+
+.connecting-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #015404; /* Yellow progress line */
+  border-radius: 1px;
+  transform-origin: top;
+  transform: scaleY(var(--line-scale, 0));
+  transition: transform 0.1s ease-out;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 60px;
+  position: relative;
+  left: -60px;
+}
+
+.step-dot {
+  width: 25px;
+  height: 25px;
+  background: #015404; /* Green dot */
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+  border: 6px solid #d9d9d9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease;
+}
+
+.step-dot.active {
+  border-color: #ffd700; /* Yellow border when active */
+}
+
+.step-label {
+  font-size: 16px;
+  color: #015404; /* Green text */
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.step-content h3 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .invest-nft-section {
+    padding: 40px 20px;
+  }
+
+  .nft-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .nft-text h2 {
+    font-size: 2rem;
+  }
+
+  .nft-benefits {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .invest-climate-section {
+    padding: 60px 20px;
+    margin-top: 0px;
+  }
+
+  .climate-header h2 {
+    font-size: 2rem;
+  }
+
+  .climate-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .steps-container {
+    position: static;
+    padding-left: 0;
+  }
+
+  .step-number {
+    left: 0;
+    min-width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .step-label {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .step-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 5px;
+    gap: 12px;
+  }
+
+  .step-content h3 {
+    font-size: 20px;
+  }
+}

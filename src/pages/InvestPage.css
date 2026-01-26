@@ -1,0 +1,255 @@
+.invest-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.invest-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.invest-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.invest-hero .hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.invest-hero .hero-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.invest-hero .hero-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.invest-hero .hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.invest-hero .hero-tagline {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.invest-content {
+  flex: 1;
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.invest-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.invest-sidebar {
+  align-self: start;
+}
+
+.invest-sidebar .project-filter {
+  position: sticky;
+  top: 2rem;
+}
+
+.invest-main {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-self: start;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #383751;
+  margin: 0 0 2rem 0;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* Override project card styles for invest page */
+.invest-page .project-card {
+  width: 100% !important;
+  max-width: 320px;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  white-space: normal !important;
+  text-overflow: unset !important;
+  overflow: visible !important;
+}
+
+.invest-page .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(1, 84, 4, 0.15);
+}
+
+.invest-page .project-image-wrapper {
+  padding-top: 75%;
+  margin-bottom: 1rem;
+}
+
+.invest-page .project-info {
+  padding: 1rem;
+}
+
+.invest-page .project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  white-space: normal !important;
+  text-overflow: unset !important;
+  overflow: visible !important;
+}
+
+.invest-page .project-id {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  white-space: normal !important;
+}
+
+@media (max-width: 1200px) {
+  .invest-container {
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .invest-container {
+    grid-template-columns: 200px 1fr;
+    gap: 1.25rem;
+  }
+
+  .invest-main {
+    padding: 1.75rem;
+  }
+
+  .investment-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .invest-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .invest-sidebar {
+    order: -1;
+    position: static;
+  }
+
+  .invest-main {
+    padding: 1.5rem;
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .invest-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .invest-hero .hero-description {
+    font-size: 1rem;
+  }
+
+  .invest-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .invest-sidebar {
+    position: static;
+    order: 1;
+  }
+
+  .invest-main {
+    order: 1;
+  }
+
+  .investment-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .invest-page .project-card {
+    max-width: 100%;
+    width: 100% !important;
+  }
+
+  .filter-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .invest-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .invest-content {
+    padding: 2rem 0;
+  }
+
+  .invest-container {
+    padding: 0 15px;
+  }
+
+  .invest-sidebar,
+  .invest-main {
+    padding: 1.5rem;
+  }
+
+  .investment-grid {
+    padding: 0 0.5rem;
+  }
+
+  .invest-page .project-card {
+    max-width: 100%;
+  }
+}

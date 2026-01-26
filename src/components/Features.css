@@ -1,0 +1,576 @@
+.features {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.features-title {
+  font-size: 34px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #ffbe2e;
+}
+
+.features-title .highlight {
+  font-size: 34px;
+  color: #015404;
+}
+
+.features-subtitle {
+  font-size: 1.2rem;
+  color: #383751;
+  margin-top: 16px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: white;
+  padding: 40px 4px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  background: url(/howitworks-bg-e1816cb9.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.2);
+  background: #ffbe2e;
+}
+
+.step-card:hover h3 {
+  color: white;
+}
+
+.step-card:hover .step-image {
+  filter: brightness(1.2);
+}
+
+.step-icon {
+  width: 55px;
+  height: 55px;
+  background: #015404;
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(1, 84, 4, 0.1);
+}
+
+.step-image {
+  object-fit: contain;
+}
+
+.step-card h3 {
+  font-size: 1.1rem;
+  color: #1f2937;
+  margin-bottom: 0;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.3s ease-out;
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: calc(100% - 40px);
+  margin: 0px auto;
+  position: relative;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+  background: #015404;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+  pointer-events: none;
+}
+
+.modal-step-image {
+  max-width: 80px;
+  object-fit: contain;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #181818;
+  text-align: center;
+  margin-bottom: 20px;
+  pointer-events: none;
+  line-height: 1.3;
+}
+
+.modal-description {
+  color: #181818;
+  line-height: 1.7;
+  text-align: center;
+  font-size: 16px;
+  white-space: pre-line;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .features-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 320px;
+  }
+
+  .features {
+    padding: 60px 0;
+  }
+
+  .features-header {
+    margin-bottom: 60px;
+  }
+
+  .features-title {
+    font-size: 2rem;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-card {
+    padding: 30px 20px;
+    min-height: 180px;
+  }
+
+  .modal-content {
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-description {
+    font-size: 1rem;
+  }
+
+  .modal-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .steps-grid {
+    max-width: 1000px;
+    gap: 25px;
+  }
+
+  .features-title {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .features {
+    padding: 70px 0;
+  }
+
+  .features-header {
+    margin-bottom: 60px;
+  }
+
+  .features-title {
+    font-size: 30px;
+  }
+
+  .features-title .highlight {
+    font-size: 30px;
+  }
+
+  .features-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .steps-grid {
+    max-width: 900px;
+    gap: 22px;
+  }
+
+  .step-card {
+    padding: 32px 4px;
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 50px 0;
+  }
+
+  .features-header {
+    margin-bottom: 50px;
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 320px;
+  }
+
+  .features-title {
+    font-size: 2.75rem;
+  }
+
+  .features-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .step-card {
+    padding: 6px 12px;
+    min-height: 140px;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .step-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 25px;
+    margin: 15px;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .modal-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .steps-grid {
+    max-width: 280px;
+  }
+
+  .features-title {
+    font-size: 1.5rem;
+  }
+
+  .step-card {
+    padding: 20px 12px;
+    min-height: 120px;
+  }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-card h3 {
+    font-size: 0.85rem;
+  }
+}
+/* Call to Action Section */
+.features-cta {
+  text-align: center;
+  margin-top: 2rem;
+  /* padding: 2rem; */
+}
+
+.cta-text {
+  font-size: 18px;
+  color: #383751;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-cta-button {
+  padding: 0 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  border: 1px solid #015404;
+  height: 48px;
+  white-space: nowrap;
+  color: #015404;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  gap: 0.5rem;
+
+  text-decoration: none;
+}
+
+.features-cta-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  background: #015404;
+  /* border-color: #ffbe2b; */
+  transform: translateY(-2px);
+}
+
+.features-cta-button img {
+  transition: filter 0.3s ease;
+}
+
+.features-cta-button:hover img {
+  filter: brightness(0) invert(1); /* Turn chevron white on hover */
+}
+
+/* Responsive CTA */
+@media (max-width: 768px) {
+  .features-cta {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .features-cta-button {
+    height: 44px;
+    padding: 0 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-cta {
+    margin-top: 2.5rem;
+    padding: 1rem;
+  }
+
+  .cta-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .features-cta-button {
+    width: 100%;
+    max-width: 130px;
+    height: 25px;
+    padding: 0px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Apply same styling to any other buttons in features section */
+  .features button,
+  .features .btn,
+  .features .primary-button,
+  .features .secondary-button {
+    width: 100%;
+    max-width: 130px;
+    height: 25px;
+    padding: 0px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Align two buttons in single line */
+  .features-cta .hero-buttons,
+  .features-cta .cta-buttons,
+  .features-cta .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  /* Also apply to any button containers in features section */
+  .features .hero-buttons,
+  .features .cta-buttons,
+  .features .button-group,
+  .features .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .features-cta {
+    margin-top: 2rem;
+    padding: 0.875rem;
+  }
+
+  .cta-text {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .features-cta-button {
+    width: 100%;
+    max-width: 130px;
+    height: 25px;
+    padding: 0px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Apply same styling to any other buttons in features section */
+  .features button,
+  .features .btn,
+  .features .primary-button,
+  .features .secondary-button {
+    width: 100%;
+    max-width: 130px;
+    height: 25px;
+    padding: 0px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Align two buttons in single line for very small screens */
+  .features-cta .hero-buttons,
+  .features-cta .cta-buttons,
+  .features-cta .button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  /* Also apply to any button containers in features section */
+  .features .hero-buttons,
+  .features .cta-buttons,
+  .features .button-group,
+  .features .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}

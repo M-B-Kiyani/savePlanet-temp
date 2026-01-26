@@ -1,0 +1,120 @@
+.project-filter {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #383751;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.filter-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.filter-option:hover .checkmark {
+  border-color: #015404;
+}
+
+.filter-option input:checked ~ .checkmark {
+  background-color: #015404;
+  border-color: #015404;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: 2px solid #e2e8f0;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.filter-option input:checked ~ .checkmark:after {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .project-filter {
+    padding: 1.25rem;
+  }
+
+  .filter-title {
+    font-size: 1rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .filter-options {
+    gap: 0.625rem;
+  }
+
+  .filter-option {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .project-filter {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .filter-option {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
