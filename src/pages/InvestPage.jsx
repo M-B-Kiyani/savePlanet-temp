@@ -59,10 +59,6 @@ function InvestPage() {
           selectedFilters.includes(project.type),
         );
 
-  const handleProjectClick = (project) => {
-    console.log("Investment project clicked:", project);
-  };
-
   const filterOptions = ["Nature Based", "Energy Based", "Waste Management"];
 
   return (
@@ -95,11 +91,7 @@ function InvestPage() {
             <h2 className="section-title">Invest in Climate Action Projects</h2>
             <div className="investment-grid">
               {filteredProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => handleProjectClick(project)}
-                />
+                <ProjectCard key={project.id} project={project} />
               ))}
             </div>
           </div>

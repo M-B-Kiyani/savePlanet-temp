@@ -4,6 +4,7 @@ import {
   ProjectsPage,
   InvestPage,
   HowItWorksPage,
+  ProjectDetailPage,
 } from "./pages/index.js";
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="/invest" element={<InvestPage />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
         </Routes>

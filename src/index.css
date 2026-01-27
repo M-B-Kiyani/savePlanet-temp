@@ -1,3 +1,4 @@
+@import "leaflet/dist/leaflet.css";
 :root {
   /* Color Palette */
   --primary-green: #015404;
@@ -10,7 +11,7 @@
 
   /* Typography */
   --font-main: "Inter", system-ui, -apple-system, sans-serif;
-  
+
   font-family: var(--font-main);
   line-height: 1.5;
   font-weight: 400;
@@ -43,7 +44,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--primary-green);

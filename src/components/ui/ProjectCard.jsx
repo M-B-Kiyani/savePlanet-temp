@@ -1,8 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import "./ProjectCard.css";
 
 function ProjectCard({ project, onClick }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    } else {
+      navigate(`/projects/${project.id}`);
+    }
+  };
+
   return (
-    <div className="project-card" onClick={onClick}>
+    <div className="project-card" onClick={handleClick}>
       <div className="project-image-wrapper">
         <img
           src={project.image}

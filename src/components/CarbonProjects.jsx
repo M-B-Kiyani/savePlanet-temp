@@ -5,11 +5,6 @@ import { featuredProjects } from "../data/projects.js";
 function CarbonProjects() {
   const navigate = useNavigate();
 
-  const handleProjectClick = (project) => {
-    console.log("Project clicked:", project);
-    // Add navigation logic here
-  };
-
   const handlePurchaseClick = () => {
     console.log("Purchase carbon credits clicked");
     navigate("/projects");
@@ -29,7 +24,6 @@ function CarbonProjects() {
         </>
       }
       subtitle="Whether you're an individual aiming for a carbon-neutral lifestyle or a business striving for sustainability, our marketplace is your trusted partner. Dive in, explore our curated projects, and make a purchase that counts."
-      onProjectClick={handleProjectClick}
       onPurchaseClick={handlePurchaseClick}
       onInvestClick={handleInvestClick}
     />

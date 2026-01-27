@@ -24,7 +24,9 @@ function ProjectGrid({
             <ProjectCard
               key={project.id || index}
               project={project}
-              onClick={() => onProjectClick?.(project)}
+              onClick={
+                onProjectClick ? () => onProjectClick(project) : undefined
+              }
             />
           ))}
         </div>

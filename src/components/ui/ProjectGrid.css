@@ -281,7 +281,7 @@
   font-size: 0.9rem;
   color: #181818;
   margin-bottom: 1rem;
-  font-family: "Courier New", monospace;
+  font-family: "inter", sans-serif, monospace;
   opacity: 0.8;
   white-space: normal;
 }

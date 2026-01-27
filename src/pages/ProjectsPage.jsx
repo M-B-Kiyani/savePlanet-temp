@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Header, Hero, Footer, ProjectCard, ProjectFilter } from "../components/ui/index.js";
+import {
+  Header,
+  Hero,
+  Footer,
+  ProjectCard,
+  ProjectFilter,
+} from "../components/ui/index.js";
 import { allProjects } from "../data/projects.js";
 import "./ProjectsPage.css";
 
@@ -21,35 +27,35 @@ function ProjectsPage() {
   };
 
   const handleFilterChange = (filterType) => {
-    setSelectedFilters(prev => 
-      prev.includes(filterType) 
-        ? prev.filter(f => f !== filterType)
-        : [...prev, filterType]
+    setSelectedFilters((prev) =>
+      prev.includes(filterType)
+        ? prev.filter((f) => f !== filterType)
+        : [...prev, filterType],
     );
   };
 
-  const filteredProjects = selectedFilters.length === 0 
-    ? allProjects 
-    : allProjects.filter((project) => {
-        if (selectedFilters.includes("Nature Based") &&
-          (project.category === "reforestation" ||
-           project.category === "forest-conservation" ||
-           project.category === "ocean-conservation")) {
-          return true;
-        }
+  const filteredProjects =
+    selectedFilters.length === 0
+      ? allProjects
+      : allProjects.filter((project) => {
+          if (
+            selectedFilters.includes("Nature Based") &&
+            (project.category === "reforestation" ||
+              project.category === "forest-conservation" ||
+              project.category === "ocean-conservation")
+          ) {
+            return true;
+          }
 
-        if (selectedFilters.includes("Energy Based") &&
-          project.category === "renewable-energy") {
-          return true;
-        }
+          if (
+            selectedFilters.includes("Energy Based") &&
+            project.category === "renewable-energy"
+          ) {
+            return true;
+          }
 
-        return false;
-      });
-
-  const handleProjectClick = (project) => {
-    console.log("Project clicked:", project);
-    // Add project details navigation logic here
-  };
+          return false;
+        });
 
   const filterOptions = ["Nature Based", "Energy Based"];
 
@@ -91,11 +97,7 @@ function ProjectsPage() {
 
               <div className="projects-grid">
                 {filteredProjects.map((project) => (
-                  <ProjectCard
-                    key={project.id}
-                    project={project}
-                    onClick={() => handleProjectClick(project)}
-                  />
+                  <ProjectCard key={project.id} project={project} />
                 ))}
               </div>
             </main>
