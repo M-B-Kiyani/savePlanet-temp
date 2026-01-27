@@ -232,7 +232,7 @@
 }
 
 .hiw-step-item:hover {
-  background-image: url(/public/howitworks-bg-e1816cb9.png);
+  background-image: url(/howitworks-bg-e1816cb9.png);
   background-repeat: no-repeat;
   background-size: cover;
   transform: translateY(-5px);
