@@ -5,3 +5,7 @@ export { default as ProjectFilter } from "./ProjectFilter.jsx";
 export { default as Header } from "./Header.jsx";
 export { default as Hero } from "./Hero.jsx";
 export { default as Footer } from "./Footer.jsx";
+export { default as PageLayout } from "./PageLayout.jsx";
+export { default as MapComponent } from "./MapComponent.jsx";
+export { default as ScrollToTop } from "./ScrollToTop.jsx";
+export { default as EmailVerificationBanner } from "./EmailVerificationBanner.jsx";

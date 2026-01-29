@@ -1,84 +1,33 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  Header,
-  Hero,
-  Footer,
-  ProjectCard,
-  ProjectFilter,
-} from "../components/ui/index.js";
+import ProjectCard from "../components/ui/ProjectCard.jsx";
+import ProjectFilter from "../components/ui/ProjectFilter.jsx";
 import { allProjects } from "../data/projects.js";
+import { useProjectFilter } from "../hooks/useProjectFilter.js";
+import PageLayout from "../components/ui/PageLayout.jsx";
 import "./ProjectsPage.css";
 
-function ProjectsPage() {
-  const navigate = useNavigate();
-  const [selectedFilters, setSelectedFilters] = useState([]);
+function ProjectsPage({ user, onLoginClick, onSignupClick, onLogoutClick }) {
+  const { selectedFilters, filteredProjects, handleFilterChange } =
+    useProjectFilter(allProjects);
 
-  const handleLoginClick = () => {
-    console.log("Login clicked");
-  };
-
-  const handleSignupClick = () => {
-    console.log("Signup clicked");
-  };
-
-  const handleMenuClick = () => {
-    console.log("Menu clicked");
-  };
-
-  const handleFilterChange = (filterType) => {
-    setSelectedFilters((prev) =>
-      prev.includes(filterType)
-        ? prev.filter((f) => f !== filterType)
-        : [...prev, filterType],
-    );
-  };
-
-  const filteredProjects =
-    selectedFilters.length === 0
-      ? allProjects
-      : allProjects.filter((project) => {
-          if (
-            selectedFilters.includes("Nature Based") &&
-            (project.category === "reforestation" ||
-              project.category === "forest-conservation" ||
-              project.category === "ocean-conservation")
-          ) {
-            return true;
-          }
-
-          if (
-            selectedFilters.includes("Energy Based") &&
-            project.category === "renewable-energy"
-          ) {
-            return true;
-          }
-
-          return false;
-        });
-
-  const filterOptions = ["Nature Based", "Energy Based"];
+  const filterOptions = ["Nature Based", "Energy Based", "Waste Management"];
 
   return (
-    <div className="projects-page">
-      <Header
-        onLoginClick={handleLoginClick}
-        onSignupClick={handleSignupClick}
-        onMenuClick={handleMenuClick}
-      />
-
-      <Hero
-        title={
-          <>
-            <span className="verified-text">Verified</span> Carbon Projects
-          </>
-        }
-        subtitle="LET'S PAVE THE PATH FOR A CLEANER, BRIGHTER AND SUSTAINABLE FUTURE."
-        tagline="START YOUR CARBON OFFSET JOURNEY TODAY!"
-        showButtons={false}
-        className="projects-hero"
-      />
-
+    <PageLayout
+      title={
+        <>
+          <span className="verified-text">Verified</span> Carbon Projects
+        </>
+      }
+      subtitle="LET'S PAVE THE PATH FOR A CLEANER, BRIGHTER AND SUSTAINABLE FUTURE."
+      tagline="START YOUR CARBON OFFSET JOURNEY TODAY!"
+      showButtons={false}
+      className="projects-page"
+      heroClassName="projects-hero"
+      user={user}
+      onLoginClick={onLoginClick}
+      onSignupClick={onSignupClick}
+      onLogoutClick={onLogoutClick}
+    >
       <section className="projects-content">
         <div className="container">
           <div className="projects-layout">
@@ -104,9 +53,7 @@ function ProjectsPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 

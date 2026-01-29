@@ -1,0 +1,368 @@
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.auth-modal {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.auth-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid #e9ecef;
+  margin-bottom: 24px;
+}
+
+.auth-modal-header h2 {
+  margin: 0;
+  color: #495057;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.auth-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.auth-modal-close:hover {
+  background: #f8f9fa;
+  color: #495057;
+}
+
+.auth-modal-content {
+  padding: 0 24px 24px 24px;
+}
+
+.auth-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #f5c6cb;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #495057;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #015404;
+  box-shadow: 0 0 0 3px rgba(1, 84, 4, 0.1);
+}
+
+.form-group input:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  background: #015404;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  background: #013a03;
+}
+
+.auth-submit-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.auth-divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.auth-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e9ecef;
+}
+
+.auth-divider span {
+  background: white;
+  padding: 0 16px;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.google-signin-btn {
+  width: 100%;
+  background: white;
+  color: #495057;
+  border: 1px solid #ced4da;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.google-signin-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.google-signin-btn:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.google-signin-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-switch p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: #015404;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.auth-switch-btn:hover {
+  color: #013a03;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .auth-modal {
+    margin: 10px;
+    max-width: none;
+  }
+
+  .auth-modal-header {
+    padding: 20px 20px 0 20px;
+  }
+
+  .auth-modal-content {
+    padding: 0 20px 20px 20px;
+  }
+
+  .auth-modal-header h2 {
+    font-size: 1.3rem;
+  }
+}
+/* Success message styles */
+.auth-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Email verification styles */
+.verification-needed {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.verification-needed h3 {
+  color: #015404;
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+}
+
+.verification-needed p {
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.verification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resend-verification-btn {
+  background: #015404;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.resend-verification-btn:hover:not(:disabled) {
+  background: #013a03;
+  transform: translateY(-1px);
+}
+
+.resend-verification-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.back-to-login-btn {
+  background: transparent;
+  color: #015404;
+  border: 1px solid #015404;
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.back-to-login-btn:hover {
+  background: #015404;
+  color: white;
+}
+
+/* Forgot password styles */
+.forgot-password {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.forgot-password-btn {
+  background: none;
+  border: none;
+  color: #015404;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-btn:hover {
+  color: #013a03;
+}
+
+/* Reset password form styles */
+.auth-modal-content form h3 {
+  color: #015404;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.auth-modal-content form p {
+  color: #666;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .verification-actions {
+    gap: 10px;
+  }
+
+  .resend-verification-btn,
+  .back-to-login-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .verification-needed h3 {
+    font-size: 1.1rem;
+  }
+
+  .verification-needed p {
+    font-size: 13px;
+  }
+}

@@ -1,7 +1,8 @@
-import { ProjectGrid, Header, Footer } from "../components/ui/index.js";
+import { ProjectGrid } from "../components/ui/index.js";
 import { allProjects } from "../data/projects.js";
+import PageLayout from "../components/ui/PageLayout.jsx";
 
-function MarketplacePage() {
+function MarketplacePage({ user, onLoginClick, onSignupClick, onLogoutClick }) {
   const handleProjectClick = (project) => {
     console.log("Marketplace project clicked:", project);
     // Navigate to project details page
@@ -17,25 +18,21 @@ function MarketplacePage() {
     // Handle investment flow
   };
 
-  const handleLoginClick = () => {
-    console.log("Login clicked from marketplace");
-  };
-
-  const handleSignupClick = () => {
-    console.log("Signup clicked from marketplace");
-  };
-
-  const handleMenuClick = () => {
-    console.log("Menu clicked from marketplace");
-  };
-
   return (
-    <div className="marketplace-page">
-      <Header
-        onLoginClick={handleLoginClick}
-        onSignupClick={handleSignupClick}
-        onMenuClick={handleMenuClick}
-      />
+    <PageLayout
+      title={
+        <>
+          Carbon Credit <span className="highlight">Marketplace</span>
+        </>
+      }
+      subtitle="Explore our comprehensive collection of verified carbon offset projects. From renewable energy to reforestation, find the perfect projects to match your sustainability goals."
+      showButtons={false}
+      className="marketplace-page"
+      user={user}
+      onLoginClick={onLoginClick}
+      onSignupClick={onSignupClick}
+      onLogoutClick={onLogoutClick}
+    >
       <ProjectGrid
         projects={allProjects}
         title={
@@ -48,8 +45,7 @@ function MarketplacePage() {
         onPurchaseClick={handlePurchaseClick}
         onInvestClick={handleInvestClick}
       />
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 

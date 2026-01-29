@@ -6,4 +6,3 @@ export { default as ProjectDetailPage } from "./ProjectDetailPage.jsx";
 export { default as AboutPage } from "./AboutPage.jsx";
 export { default as InvestPage } from "./InvestPage.jsx";
 export { default as HowItWorksPage } from "./HowItWorksPage.jsx";
-export { default as ExampleUnusedComponentsPage } from "./ExampleUnusedComponentsPage.jsx";

@@ -39,25 +39,22 @@
 
 /* Project card styles for homepage */
 .projects .project-card {
-  padding: 16px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid var(--neutral-colors-300, #d1d5db);
-  cursor: pointer;
-  width: calc(33.333% - 16px);
-  max-width: 350px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  width: 100% !important;
+  max-width: 320px;
+  margin: 0;
+  border: 1px solid rgba(0.1, 0.1, 0.1, 0.1);
   transition: all 0.3s ease;
-  /* Remove text cutoff issues */
-  white-space: normal;
-  text-overflow: unset;
-  overflow: visible;
+  white-space: normal !important;
+  text-overflow: unset !important;
+  overflow: visible !important;
+  border-radius: 8px;
+  background: white;
 }
 
 /* Responsive adjustments for homepage project cards */
 @media (max-width: 1200px) {
   .projects .project-card {
-    width: calc(33.333% - 14px);
+    /* width: calc(33.333% - 14px); */
     max-width: 320px;
     padding: 14px;
   }
@@ -226,9 +223,10 @@
 }
 
 .projects .project-card:hover {
-  border: 1px solid var(--C1, #015404);
-  box-shadow: 0 8px 25px rgba(1, 84, 4, 0.15);
-  transform: translateY(-4px);
+  /* border: 1px solid var(--C1, #015404); */
+
+  border: 1px solid rgba(0.1, 0.1, 0.1, 0.1);
+  transform: translateY(-1px);
 }
 
 .projects .project-image-wrapper {
@@ -253,12 +251,12 @@
 }
 
 .projects .project-image:hover {
-  scale: 1.05;
+  scale: 1;
 }
 
 .projects .project-card:hover .project-image {
   transition: transform 0.4s ease;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .projects .project-info {

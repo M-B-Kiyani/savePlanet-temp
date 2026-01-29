@@ -462,7 +462,7 @@ body.mobile-menu-active {
   }
 
   .menu-button {
-    padding: 0.25rem;
+    padding: 1rem;
   }
 
   .menu-button span {
@@ -505,6 +505,12 @@ body.mobile-menu-active {
   .mobile-signup-button {
     padding: 0.75rem 0.75rem;
     font-size: 0.9rem;
+  }
+
+  .mobile-logout-button {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.65rem;
+    min-height: 44px;
   }
 }
 
@@ -561,6 +567,12 @@ body.mobile-menu-active {
     font-size: 0.85rem;
   }
 
+  .mobile-logout-button {
+    padding: 0.625rem 1rem;
+    font-size: 0.85rem;
+    min-height: 42px;
+  }
+
   .menu-button span {
     width: 18px;
     height: 2px;
@@ -603,5 +615,155 @@ body.mobile-menu-active {
 
   .header-actions .close-icon {
     font-size: 1.1rem;
+  }
+}
+/* User Menu Styles */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-email {
+  color: var(--C2);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.logout-button {
+  background: transparent;
+  color: var(--C2);
+  border: 1.5px solid var(--C2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logout-button:hover {
+  background: var(--C2);
+  color: var(--C1);
+  transform: translateY(-1px);
+}
+
+/* Mobile User Menu Styles */
+.mobile-user-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mobile-user-email {
+  color: var(--C2);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.mobile-logout-button {
+  width: 100%;
+  background: transparent;
+  color: var(--C2);
+  border: 1.5px solid var(--C2);
+  padding: 0.875rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px; /* Ensure touch-friendly size */
+}
+
+.mobile-logout-button:hover {
+  background: var(--C2);
+  color: var(--C1);
+}
+
+/* Responsive adjustments for user menu */
+@media (max-width: 992px) {
+  .user-menu {
+    gap: 0.75rem;
+  }
+
+  .user-email {
+    font-size: 0.9rem;
+  }
+
+  .logout-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-menu {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .user-email {
+    font-size: 0.85rem;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-menu {
+    gap: 0.25rem;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .user-email {
+    font-size: 0.8rem;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logout-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 70px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .user-menu {
+    gap: 0.25rem;
+  }
+
+  .user-email {
+    font-size: 0.75rem;
+    max-width: 80px;
+  }
+
+  .logout-button {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    min-width: 60px;
+    border-radius: 18px;
   }
 }

@@ -1,50 +1,23 @@
-import { Header, Hero, Footer } from "../components/ui/index.js";
+import PageLayout from "../components/ui/PageLayout.jsx";
 
-function AboutPage() {
-  const handleLoginClick = () => {
-    console.log("Login clicked from about page");
-  };
-
-  const handleSignupClick = () => {
-    console.log("Signup clicked from about page");
-  };
-
-  const handleMenuClick = () => {
-    console.log("Menu clicked from about page");
-  };
-
-  const handleLearnMoreClick = () => {
-    console.log("Learn more about our mission");
-  };
-
-  const handleContactClick = () => {
-    console.log("Contact us clicked");
-  };
-
+function AboutPage({ user, onLoginClick, onSignupClick, onLogoutClick }) {
   return (
-    <div className="about-page">
-      <Header
-        onLoginClick={handleLoginClick}
-        onSignupClick={handleSignupClick}
-        onMenuClick={handleMenuClick}
-      />
-
-      <Hero
-        title={
-          <>
-            About <span className="carbon-text">SavePlanetEarth</span>
-          </>
-        }
-        subtitle="Leading the Fight Against Climate Change"
-        tagline="Our Mission"
-        description="We are dedicated to making carbon offsetting accessible, transparent, and impactful. Through blockchain technology and verified projects, we connect individuals and businesses with meaningful climate action opportunities worldwide."
-        primaryButtonText="Learn More About Our Mission"
-        secondaryButtonText="Contact Us"
-        onPrimaryClick={handleLearnMoreClick}
-        onSecondaryClick={handleContactClick}
-        backgroundImage="/bg-hero-20767579.png"
-      />
-
+    <PageLayout
+      title={
+        <>
+          About <span className="carbon-text">SavePlanetEarth</span>
+        </>
+      }
+      subtitle="Leading the Fight Against Climate Change"
+      tagline="Our Mission"
+      description="We are dedicated to making carbon offsetting accessible, transparent, and impactful. Through blockchain technology and verified projects, we connect individuals and businesses with meaningful climate action opportunities worldwide."
+      backgroundImage="/bg-hero-20767579.png"
+      className="about-page"
+      user={user}
+      onLoginClick={onLoginClick}
+      onSignupClick={onSignupClick}
+      onLogoutClick={onLogoutClick}
+    >
       {/* You can add more content sections here */}
       <section
         style={{
@@ -73,17 +46,7 @@ function AboutPage() {
           </p>
         </div>
       </section>
-
-      <Footer
-        description="Leading the fight against climate change through verified carbon projects and blockchain transparency."
-        siteMapLinks={[
-          { text: "Home", href: "/" },
-          { text: "About", href: "/about" },
-          { text: "Projects", href: "/projects" },
-          { text: "Marketplace", href: "/marketplace" },
-        ]}
-      />
-    </div>
+    </PageLayout>
   );
 }
 

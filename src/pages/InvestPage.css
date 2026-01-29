@@ -85,7 +85,7 @@
   background: white;
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
   align-self: start;
 }
 
@@ -96,6 +96,7 @@
   margin: 0 0 2rem 0;
 }
 
+/* Enhanced Investment Grid - Same as ProjectsPage */
 .investment-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,26 +104,30 @@
   justify-items: center;
 }
 
-/* Override project card styles for invest page */
+/* Enhanced Project Card Styles for Invest Page */
 .invest-page .project-card {
   width: 100% !important;
   max-width: 320px;
   margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0.1, 0.1, 0.1, 0.1);
   transition: all 0.3s ease;
   white-space: normal !important;
   text-overflow: unset !important;
   overflow: visible !important;
+  border-radius: 8px;
+  background: white;
 }
 
 .invest-page .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(1, 84, 4, 0.15);
+  border: 1px solid rgba(0.1, 0.1, 0.1, 0.1);
+  transform: translateY(-1px);
 }
 
 .invest-page .project-image-wrapper {
   padding-top: 75%;
   margin-bottom: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .invest-page .project-info {
@@ -134,6 +139,7 @@
   font-weight: 600;
   margin-bottom: 0.5rem;
   line-height: 1.4;
+  color: #181818;
   white-space: normal !important;
   text-overflow: unset !important;
   overflow: visible !important;
@@ -143,33 +149,39 @@
   font-size: 0.9rem;
   margin-bottom: 1rem;
   opacity: 0.8;
+  color: #181818;
   white-space: normal !important;
 }
 
-@media (max-width: 1200px) {
+/* Responsive Design - Enhanced for Better UX */
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .investment-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .invest-page .project-card {
+    max-width: 350px;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (max-width: 1199px) {
   .invest-container {
     grid-template-columns: 220px 1fr;
     gap: 1.5rem;
   }
-}
-
-@media (max-width: 1024px) {
-  .invest-container {
-    grid-template-columns: 200px 1fr;
-    gap: 1.25rem;
-  }
-
-  .invest-main {
-    padding: 1.75rem;
-  }
 
   .investment-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 992px) {
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
   .invest-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -184,9 +196,31 @@
     padding: 1.5rem;
     order: 1;
   }
+
+  .investment-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .invest-page .project-card {
+    max-width: 300px;
+  }
 }
 
-@media (max-width: 768px) {
+/* Tablet Portrait (768px - 990px) */
+@media (max-width: 990px) and (min-width: 768px) {
+  .investment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .invest-page .project-card {
+    max-width: 80%;
+  }
+}
+
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) {
   .invest-hero .hero-title {
     font-size: 2.5rem;
   }
@@ -195,29 +229,39 @@
     font-size: 1rem;
   }
 
+  .invest-content {
+    padding: 1.5rem 0;
+  }
+
   .invest-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 0 0.75rem;
   }
 
   .invest-sidebar {
     position: static;
-    order: 1;
+    order: -1;
   }
 
   .invest-main {
+    padding: 1.25rem;
     order: 1;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
   }
 
   .investment-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .invest-page .project-card {
-    max-width: 100%;
-    width: 100% !important;
+    max-width: 80%;
+    width: 80% !important;
   }
 
   .filter-options {
@@ -227,29 +271,74 @@
   }
 }
 
+/* Mobile Medium (361px - 480px) */
 @media (max-width: 480px) {
   .invest-hero .hero-title {
     font-size: 2rem;
   }
 
   .invest-content {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   .invest-container {
-    padding: 0 15px;
-  }
-
-  .invest-sidebar,
-  .invest-main {
-    padding: 1.5rem;
-  }
-
-  .investment-grid {
     padding: 0 0.5rem;
   }
 
+  .invest-main {
+    padding: 1rem;
+  }
+
+  .investment-grid {
+    gap: 0.75rem;
+  }
+
   .invest-page .project-card {
-    max-width: 100%;
+    max-width: 80%;
+  }
+
+  .invest-page .project-info {
+    padding: 0.875rem;
+  }
+
+  .invest-page .project-title {
+    font-size: 1rem;
+  }
+
+  .invest-page .project-id {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Small (≤360px) */
+@media (max-width: 360px) {
+  .invest-hero .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .invest-container {
+    padding: 0 0.25rem;
+  }
+
+  .invest-main {
+    padding: 0.75rem;
+  }
+
+  .investment-grid {
+    gap: 0.5rem;
+  }
+
+  .invest-page .project-info {
+    padding: 0.75rem;
+  }
+
+  .invest-page .project-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .invest-page .project-id {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
   }
 }

@@ -1,13 +1,5 @@
-import React from "react";
 import "./Footer.css";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 function Footer({
   logoSrc = "/logo.png",
@@ -15,9 +7,11 @@ function Footer({
   description = "Empowering the world to take direct climate action through verified carbon projects and blockchain transparency.",
   socialLinks = {
     facebook: "#",
-    twitter: "#",
+    x: "#",
     instagram: "#",
     linkedin: "#",
+    youtube: "#",
+    github: "#",
   },
   siteMapLinks = [
     { text: "Home", href: "/" },
@@ -52,23 +46,33 @@ function Footer({
             <p className="footer-desc">{description}</p>
             <div className="social-icons">
               {socialLinks.facebook && (
-                <a href={socialLinks.facebook}>
-                  <Facebook size={20} />
+                <a href={socialLinks.facebook} aria-label="Facebook">
+                  <i className="fa-brands fa-facebook"></i>
                 </a>
               )}
-              {socialLinks.twitter && (
-                <a href={socialLinks.twitter}>
-                  <Twitter size={20} />
+              {socialLinks.x && (
+                <a href={socialLinks.x} aria-label="X (formerly Twitter)">
+                  <i className="fa-brands fa-x-twitter"></i>
                 </a>
               )}
               {socialLinks.instagram && (
-                <a href={socialLinks.instagram}>
-                  <Instagram size={20} />
+                <a href={socialLinks.instagram} aria-label="Instagram">
+                  <i className="fa-brands fa-instagram"></i>
                 </a>
               )}
               {socialLinks.linkedin && (
-                <a href={socialLinks.linkedin}>
-                  <Linkedin size={20} />
+                <a href={socialLinks.linkedin} aria-label="LinkedIn">
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+              )}
+              {socialLinks.youtube && (
+                <a href={socialLinks.youtube} aria-label="YouTube">
+                  <i className="fa-brands fa-youtube"></i>
+                </a>
+              )}
+              {socialLinks.github && (
+                <a href={socialLinks.github} aria-label="GitHub">
+                  <i className="fa-brands fa-github"></i>
                 </a>
               )}
             </div>

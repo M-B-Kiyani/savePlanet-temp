@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { Header, Footer } from "../components/ui/index.js";
+import PageLayout from "../components/ui/PageLayout.jsx";
 import "./HowItWorksPage.css";
 
-function HowItWorksPage() {
+function HowItWorksPage({ user, onLoginClick, onSignupClick, onLogoutClick }) {
   const navigate = useNavigate();
 
   const handlePurchaseClick = () => {
@@ -58,23 +58,16 @@ function HowItWorksPage() {
   ];
 
   return (
-    <div className="how-it-works-page">
-      <Header />
-
-      {/* Hero Section */}
-      <section className="hiw-hero">
-        <div className="hiw-hero-content">
-          <h1 className="hiw-hero-title">How It Works</h1>
-          <p className="hiw-hero-subtitle">
-            Our carbon credit marketplace operates in a straightforward and
-            transparent manner, integrating blockchain and artificial
-            intelligence to guarantee reliability and seamless transactions.
-            Here's a simple step-by-step process for buying and selling carbon
-            credits on our platform:
-          </p>
-        </div>
-      </section>
-
+    <PageLayout
+      title="How It Works"
+      description="Our carbon credit marketplace operates in a straightforward and transparent manner, integrating blockchain and artificial intelligence to guarantee reliability and seamless transactions. Here's a simple step-by-step process for buying and selling carbon credits on our platform:"
+      showButtons={false}
+      className="how-it-works-page"
+      user={user}
+      onLoginClick={onLoginClick}
+      onSignupClick={onSignupClick}
+      onLogoutClick={onLogoutClick}
+    >
       {/* Steps Section */}
       <section className="hiw-steps">
         <div className="hiw-container">
@@ -243,9 +236,7 @@ function HowItWorksPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 

@@ -6,7 +6,12 @@ import Footer from "../components/ui/Footer";
 import MapComponent from "../components/ui/MapComponent";
 import "./ProjectDetailPage.css";
 
-function ProjectDetailPage() {
+function ProjectDetailPage({
+  user,
+  onLoginClick,
+  onSignupClick,
+  onLogoutClick,
+}) {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = getProjectById(id);
@@ -24,7 +29,12 @@ function ProjectDetailPage() {
   if (!project) {
     return (
       <div className="project-detail-page">
-        <Header />
+        <Header
+          user={user}
+          onLoginClick={onLoginClick}
+          onSignupClick={onSignupClick}
+          onLogoutClick={onLogoutClick}
+        />
         <div className="project-not-found">
           <h2>Project Not Found</h2>
           <button onClick={() => navigate("/projects")}>
@@ -68,9 +78,25 @@ function ProjectDetailPage() {
   // Debug: Log the hero image path
   console.log("Hero image path:", project.heroImage || project.image);
 
+  const handleBuyClick = () => {
+    if (!user) {
+      // If user is not logged in, show login modal
+      onLoginClick();
+    } else {
+      // If user is logged in, proceed with purchase
+      console.log("Proceeding with purchase for user:", user.email);
+      // TODO: Implement actual purchase logic
+    }
+  };
+
   return (
     <div className="project-detail-page">
-      <Header />
+      <Header
+        user={user}
+        onLoginClick={onLoginClick}
+        onSignupClick={onSignupClick}
+        onLogoutClick={onLogoutClick}
+      />
 
       {/* Hero Section */}
       <div
@@ -112,7 +138,7 @@ function ProjectDetailPage() {
           {/* Description Section */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.description ? "active" : ""}`}
               onClick={() => toggleSection("description")}
             >
               <h3>Description:</h3>
@@ -140,7 +166,7 @@ function ProjectDetailPage() {
           {/* PCS Registry Link */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.pcsRegistry ? "active" : ""}`}
               onClick={() => toggleSection("pcsRegistry")}
             >
               <h3>PCS Registry Link:</h3>
@@ -170,7 +196,7 @@ function ProjectDetailPage() {
           {/* Carbon Credits Generated */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.carbonGenerated ? "active" : ""}`}
               onClick={() => toggleSection("carbonGenerated")}
             >
               <h3>Carbon Credits Generated t/CO2e:</h3>
@@ -195,7 +221,7 @@ function ProjectDetailPage() {
           {/* Carbon Credits Sold */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.carbonSold ? "active" : ""}`}
               onClick={() => toggleSection("carbonSold")}
             >
               <h3>Carbon Credits Sold:</h3>
@@ -220,7 +246,7 @@ function ProjectDetailPage() {
           {/* Carbon Credits Available */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.carbonAvailable ? "active" : ""}`}
               onClick={() => toggleSection("carbonAvailable")}
             >
               <h3>Carbon Credits Available t/CO2e:</h3>
@@ -245,7 +271,7 @@ function ProjectDetailPage() {
           {/* Blockchain Address */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.blockchainAddress ? "active" : ""}`}
               onClick={() => toggleSection("blockchainAddress")}
             >
               <h3>Project Blockchain Address:</h3>
@@ -276,7 +302,7 @@ function ProjectDetailPage() {
           {/* Map Section */}
           <div className="content-section">
             <div
-              className="section-header"
+              className={`section-header ${expandedSections.map ? "active" : ""}`}
               onClick={() => toggleSection("map")}
             >
               <h3>Map:</h3>
@@ -343,7 +369,9 @@ function ProjectDetailPage() {
               </div>
             </div>
 
-            <button className="buy-button">Sign in to Buy</button>
+            <button className="buy-button" onClick={handleBuyClick}>
+              {user ? "Buy Now" : "Sign in to Buy"}
+            </button>
           </div>
         </div>
       </div>

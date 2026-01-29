@@ -7,23 +7,8 @@ import Features from "../components/Features.jsx"; // How it Works
 import About from "../components/About.jsx";
 import "./HomePage.css";
 
-function HomePage() {
+function HomePage({ user, onLoginClick, onSignupClick, onLogoutClick }) {
   const navigate = useNavigate();
-
-  const handleLoginClick = () => {
-    console.log("Login clicked");
-    // Add login logic here
-  };
-
-  const handleSignupClick = () => {
-    console.log("Signup clicked");
-    // Add signup logic here
-  };
-
-  const handleMenuClick = () => {
-    console.log("Menu clicked");
-    // Add menu logic here
-  };
 
   const handlePrimaryClick = () => {
     console.log("Purchase Carbon Credits clicked");
@@ -38,9 +23,10 @@ function HomePage() {
   return (
     <div className="home-page">
       <Header
-        onLoginClick={handleLoginClick}
-        onSignupClick={handleSignupClick}
-        onMenuClick={handleMenuClick}
+        user={user}
+        onLoginClick={onLoginClick}
+        onSignupClick={onSignupClick}
+        onLogoutClick={onLogoutClick}
       />
       <Hero
         title={

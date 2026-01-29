@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
 
 function Header({
@@ -13,11 +13,14 @@ function Header({
   signupText = "Sign Up",
   onLoginClick,
   onSignupClick,
+  onLogoutClick,
   onMenuClick,
   className = "",
   style = {},
+  user = null,
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   // Handle body scroll when mobile menu is open
   useEffect(() => {
@@ -47,6 +50,14 @@ function Header({
     }
   };
 
+  const handleLogoutClick = (e) => {
+    if (onLogoutClick) {
+      e.preventDefault();
+      console.log("Logout button clicked");
+      onLogoutClick();
+    }
+  };
+
   const handleMenuClick = (e) => {
     e.preventDefault();
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -59,11 +70,24 @@ function Header({
     setIsMobileMenuOpen(false);
   };
 
+  const handleNavClick = (path) => (e) => {
+    // If clicking on the current page, scroll to top
+    if (location.pathname === path) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    closeMobileMenu();
+  };
+
   return (
     <header className={`header ${className}`} style={style}>
       <div className="header-container">
         <div className="logo-content">
-          <Link to={logoHref} className="logo-link">
+          <Link
+            to={logoHref}
+            className="logo-link"
+            onClick={handleNavClick(logoHref)}
+          >
             <div className="earth-icon">
               <img src={logoSrc} alt={logoText} />
             </div>
@@ -73,13 +97,21 @@ function Header({
           </Link>
         </div>
         <nav className="header-nav">
-          <Link to="/" className="nav-link">
+          <Link to="/" className="nav-link" onClick={handleNavClick("/")}>
             Home
           </Link>
-          <Link to="/projects" className="nav-link">
+          <Link
+            to="/projects"
+            className="nav-link"
+            onClick={handleNavClick("/projects")}
+          >
             Carbon Projects
           </Link>
-          <Link to="/invest" className="nav-link">
+          <Link
+            to="/invest"
+            className="nav-link"
+            onClick={handleNavClick("/invest")}
+          >
             IICA
           </Link>
           <Link to="#" className="nav-link">
@@ -90,15 +122,26 @@ function Header({
           </Link>
         </nav>
         <div className="header-actions">
-          {showLogin && (
-            <button className="login-button" onClick={handleLoginClick}>
-              {loginText}
-            </button>
-          )}
-          {showSignup && (
-            <button className="signup-button" onClick={handleSignupClick}>
-              {signupText}
-            </button>
+          {user ? (
+            <div className="user-menu">
+              <span className="user-email">{user.email}</span>
+              <button className="logout-button" onClick={handleLogoutClick}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              {showLogin && (
+                <button className="login-button" onClick={handleLoginClick}>
+                  {loginText}
+                </button>
+              )}
+              {showSignup && (
+                <button className="signup-button" onClick={handleSignupClick}>
+                  {signupText}
+                </button>
+              )}
+            </>
           )}
           {showMenu && !isMobileMenuOpen && (
             <button className="menu-button" onClick={handleMenuClick}>
@@ -120,20 +163,24 @@ function Header({
         className={`mobile-menu ${isMobileMenuOpen ? "mobile-menu-open" : ""}`}
       >
         <nav className="mobile-nav">
-          <Link to="/" className="mobile-nav-link" onClick={closeMobileMenu}>
+          <Link
+            to="/"
+            className="mobile-nav-link"
+            onClick={handleNavClick("/")}
+          >
             Home
           </Link>
           <Link
             to="/projects"
             className="mobile-nav-link"
-            onClick={closeMobileMenu}
+            onClick={handleNavClick("/projects")}
           >
             Carbon Projects
           </Link>
           <Link
             to="/invest"
             className="mobile-nav-link"
-            onClick={closeMobileMenu}
+            onClick={handleNavClick("/invest")}
           >
             IICA
           </Link>
@@ -145,12 +192,32 @@ function Header({
           </Link>
         </nav>
         <div className="mobile-actions">
-          <button className="mobile-login-button" onClick={handleLoginClick}>
-            {loginText}
-          </button>
-          <button className="mobile-signup-button" onClick={handleSignupClick}>
-            {signupText}
-          </button>
+          {user ? (
+            <div className="mobile-user-menu">
+              <span className="mobile-user-email">{user.email}</span>
+              <button
+                className="mobile-logout-button"
+                onClick={handleLogoutClick}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <button
+                className="mobile-login-button"
+                onClick={handleLoginClick}
+              >
+                {loginText}
+              </button>
+              <button
+                className="mobile-signup-button"
+                onClick={handleSignupClick}
+              >
+                {signupText}
+              </button>
+            </>
+          )}
         </div>
       </div>
     </header>
