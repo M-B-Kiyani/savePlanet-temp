@@ -9,3 +9,4 @@ export { default as PageLayout } from "./PageLayout.jsx";
 export { default as MapComponent } from "./MapComponent.jsx";
 export { default as ScrollToTop } from "./ScrollToTop.jsx";
 export { default as EmailVerificationBanner } from "./EmailVerificationBanner.jsx";
+export { default as Timeline } from "./Timeline.jsx";

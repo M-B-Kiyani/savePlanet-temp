@@ -23,13 +23,13 @@ function App() {
     closeAuthModal,
   } = useAuth();
 
-  if (loading) {
-    return (
-      <div className="app-loading">
-        <div className="loading-spinner">Loading...</div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="app-loading">
+  //       <div className="loading-spinner">Loading...</div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="app">

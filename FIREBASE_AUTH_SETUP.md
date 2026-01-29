@@ -56,9 +56,38 @@ This document outlines the Firebase authentication integration that has been imp
 ### 🔒 Security Features
 
 - **Firebase Security**: Leverages Firebase's built-in security
+- **Environment Variables**: Sensitive credentials stored in environment variables (not in code)
+- **Git Security**: Firebase credentials excluded from version control via .gitignore
 - **Input Validation**: Email format and password length validation
 - **Secure Storage**: Tokens managed by Firebase SDK
 - **HTTPS Only**: All authentication requests over secure connections
+- **Email Verification**: Users must verify email before accessing the platform
+
+### 🔧 Environment Setup
+
+**Important**: Firebase credentials are now stored in environment variables for security.
+
+1. **Copy environment template:**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Add your Firebase credentials to `.env`:**
+
+   ```
+   VITE_FIREBASE_API_KEY=your_api_key_here
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain_here
+   VITE_FIREBASE_PROJECT_ID=your_project_id_here
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket_here
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id_here
+   VITE_FIREBASE_APP_ID=your_app_id_here
+   VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id_here
+   ```
+
+3. **Never commit the `.env` file** - it's already in `.gitignore`
+
+See `FIREBASE_SETUP.md` for detailed setup instructions.
 
 ### 📱 Mobile Responsive
 

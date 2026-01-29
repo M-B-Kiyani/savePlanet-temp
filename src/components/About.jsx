@@ -83,11 +83,22 @@ function About() {
       }
     };
 
+    // Initial check with immediate and delayed execution for page load scenarios
+    const initialCheck = () => {
+      requestAnimationFrame(() => {
+        handleScroll();
+      });
+    };
+
     window.addEventListener("scroll", throttledScroll);
-    handleScroll(); // Initial check
+
+    // Run initial check immediately and after a brief delay for page load scenarios
+    initialCheck();
+    const timeoutId = setTimeout(initialCheck, 100);
 
     return () => {
       window.removeEventListener("scroll", throttledScroll);
+      clearTimeout(timeoutId);
     };
   }, []);
 
